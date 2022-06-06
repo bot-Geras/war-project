@@ -13,10 +13,13 @@ document.getElementById("draw-card").addEventListener("click", function () {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      document.getElementById("cards").innerHTML = `
-      <img src="${data.cards[0].image}">
-      <img src="${data.cards[1].image}">
+      document.getElementById("cards").children[0].innerHTML = `
+      <img src="${data.cards[0].image}" class="cards">
+      
       `;
+      document.getElementById("cards").children[1].innerHTML = `
+      <img src="${data.cards[1].image}" class="cards">
+      `
     });
 });
 
